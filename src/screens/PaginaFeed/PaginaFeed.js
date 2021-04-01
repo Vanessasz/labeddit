@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ProtegePagina } from "../../hooks/ProtegePagina";
 import { BASE_URL } from "../../constants/apiConstants";
 import { DadosSolicitacao } from "../../hooks/DadosSolicitacao";
@@ -24,7 +24,7 @@ export default function PaginaFeed() {
   };
 
   const data = DadosSolicitacao(`${BASE_URL}/posts`);
-
+  
   return (
     <div>
       <CardPost>
@@ -43,8 +43,8 @@ export default function PaginaFeed() {
         </form>
       </CardPost>
 
-      <div>
-        {data &&
+      <div> 
+        {data && 
           data.posts.map((posts) => {
             return (
               <CardPosts

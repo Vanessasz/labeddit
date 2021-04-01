@@ -42,7 +42,7 @@ export default function PaginaLogin() {
         <MeuBotao>Entrar</MeuBotao>
       </form>
       <MeuBotao onClick={() => irParaCadastro(history)}>
-        Não tem login? Clique Aqui
+        Não tem conta? Clique Aqui
       </MeuBotao>
     </Divisao>
   );
