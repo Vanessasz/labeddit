@@ -9,21 +9,23 @@ export const Cards = styled.div`
   background: #dbb4ad;
   border: 2px solid #d30c78;
   border-radius: 10px;
-  width: 300px;
-  height: 250px;
+  width: 500px;
+  height: 450px;
   padding: 5px;
 `;
 
 export const CardVotos = styled.div`
   display: flex;
-  align-items: flex-start;
-  bottom: 10px;
+  align-items: flex-end;
+  top: 20px;
+  position: relative;
+  margin-right: 350px;
 `;
 
 export const CardComentarios = styled.p`
-  margin-left: 190px;
-  top: 30px;
+  top: 50px;
   position: relative;
+  margin-left: 350px;
 `;
 
 export const MeuBotao = styled.button`

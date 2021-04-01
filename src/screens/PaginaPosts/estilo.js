@@ -9,14 +9,15 @@ export const Cards = styled.div`
   background: #dbb4ad;
   border: 2px solid #d30c78;
   border-radius: 10px;
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   padding: 5px;
 `;
 
 export const CardVotos = styled.div`
   display: flex;
   align-items: flex-start;
+  justify-content: space-around;
   bottom: 10px;
 `;
 

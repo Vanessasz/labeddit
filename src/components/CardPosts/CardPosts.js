@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 
 export default function CardPosts(props) {
   const history = useHistory();
+
   return (
     <Cards>
       <MeuBotao onClick={() => irParaPosts(history, props.id)}>
@@ -15,7 +16,8 @@ export default function CardPosts(props) {
       <p>{props.username}</p>
       {props.text}
       <CardComentarios>
-        {props.commentsCount}&nbsp;&nbsp;comentários
+        {props.commentsCount} comentários
+        &nbsp;&nbsp;
       </CardComentarios>
       <CardVotos>
         <img src={like} alt="icone like" />
