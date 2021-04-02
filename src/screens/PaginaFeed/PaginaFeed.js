@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import CardPosts from "../../components/CardPosts/CardPosts";
 import { CardPost, MeuBotao, Input, TextArea } from "./estilo";
 import { criandoPosts } from "../../services/user";
-import { useForm } from "../../hooks/useForm";
+import { useForm } from "../../hooks/useForm"
 
 export default function PaginaFeed() {
   ProtegePagina();

@@ -56,3 +56,61 @@ export const detalhesPosts = (id) => {
       console.log(erro.mensagem);
     });
 };
+
+export const comentarios = (body, id) => {
+   
+  axios.post(`${BASE_URL}/posts/${id}/comment`, body, {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }})
+
+      .then(res => {       
+          console.log(res, "Comentário enviado!")
+
+      }).catch(error => {
+          console.log(error)
+      })
+}
+
+// export const vote = (bodyVote, id) => {
+   
+//   const body = {
+//       "direction": bodyVote
+//   }
+      
+//       axios.put(`${BASE_URL}/posts/${id}/vote`, body, {
+//           headers: {
+//             Authorization: localStorage.getItem("token")
+//           }})
+  
+//           .then(res => {     
+              
+  
+//           }).catch(error => {
+//               console.log(error.message)
+//           })
+  
+//   return vote;
+// }
+
+// export const voteComment = (bodyVote, id, commentId) => {
+ 
+//     const body = {
+//         "direction": bodyVote
+//     }
+        
+//         axios.put(`${BASE_URL}/posts/${id}/comment/${commentId}/vote`, body, {
+//             headers: {
+//               Authorization: localStorage.getItem("token")
+//             }})
+    
+//             .then(res => {         
+                
+    
+//             }).catch(error => {
+//                 console.log(error.message)
+//             })
+    
+//     return voteComment;
+// }
+
