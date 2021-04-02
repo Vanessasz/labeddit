@@ -14,4 +14,4 @@ export const useForm = (initialValues) => {
 //     setForm(initialValues)
 // }
 
-// return {form, onChange, resetForm}
+// return {form, onChange, limparInput}
