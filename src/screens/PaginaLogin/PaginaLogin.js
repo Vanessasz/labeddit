@@ -3,7 +3,7 @@ import { Divisao, Input, MeuBotao } from "./estilo";
 import { useHistory } from "react-router-dom";
 import { irParaCadastro } from "../../router/Coordinator";
 import { useForm } from "../../hooks/useForm";
-import { login } from "../../services/user";
+import { login } from "../../services/allRequisitions";
 
 export default function PaginaLogin() {
   const history = useHistory();

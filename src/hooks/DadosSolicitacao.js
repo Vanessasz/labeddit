@@ -18,7 +18,7 @@ export function DadosSolicitacao(url, estadoInicial) {
       .catch((erro) => {
         console.log(erro);
       });
-  }, [url]);
+  }, [url, data]);
 
   return data;
 }

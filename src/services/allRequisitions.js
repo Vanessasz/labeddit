@@ -9,9 +9,8 @@ export const login = (body, history) => {
       localStorage.setItem("token", res.data.token);
       irParaFeed(history);
     })
-    .catch((erro) => {
+    .catch((error) => {
       alert("Email ou senha inválidos :(");
-      console.log(erro.mensagem);
     });
 };
 
@@ -23,8 +22,8 @@ export const cadastro = (body, history) => {
       alert("Cadastro efetuado com sucesso :)");
       irParaFeed(history);
     })
-    .catch((erro) => {
-      console.log(erro.mensagem);
+    .catch((error) => {
+      alert("Ocorreu um erro, veririque os dados e tente novamente");
     });
 };
 
@@ -36,11 +35,12 @@ export const criandoPosts = (body, history) => {
         Authorization: token,
       },
     })
-    .then(() => {
+    .then((res) => {
+      alert("Post enviado")
       irParaFeed(history);
     })
-    .catch((erro) => {
-      console.log(erro.mensagem);
+    .catch((error) => {
+      alert("Ocorreu um erro, post não criado");
     });
 };
 
@@ -51,9 +51,9 @@ export const detalhesPosts = (id) => {
         Authorization: localStorage.getItem("token"),
       },
     })
-    .then(() => {})
-    .catch((erro) => {
-      console.log(erro.mensagem);
+    .then((res) => {})
+    .catch((error) => {
+      alert("Erro!!, detalhes não encontrados");
     });
 };
 
@@ -64,34 +64,36 @@ export const comentarios = (body, id) => {
         Authorization: localStorage.getItem("token")
       }})
 
-      .then(res => {       
-          console.log(res, "Comentário enviado!")
+      .then(res => {  
+          alert("Comentário enviado!")
 
       }).catch(error => {
           console.log(error)
+          alert("Não foi possível comentar, tente novamente")
       })
 }
 
-// export const vote = (bodyVote, id) => {
+export const vote = (comment, direction, id) => {
    
-//   const body = {
-//       "direction": bodyVote
-//   }
+  const body = {
+      "direction": direction
+  }
       
-//       axios.put(`${BASE_URL}/posts/${id}/vote`, body, {
-//           headers: {
-//             Authorization: localStorage.getItem("token")
-//           }})
+      axios.put(`${BASE_URL}/posts/${id}/comment/${comment}/vote`, body, {
+          headers: {
+            Authorization: localStorage.getItem("token")
+          }})
   
-//           .then(res => {     
+          .then(res => {     
               
   
-//           }).catch(error => {
-//               console.log(error.message)
-//           })
+          }).catch(error => {
+            console.log(error)
+              alert("Não foi possível votar no comentário, tente novamente")
+          })
   
-//   return vote;
-// }
+  return vote;
+}
 
 // export const voteComment = (bodyVote, id, commentId) => {
  

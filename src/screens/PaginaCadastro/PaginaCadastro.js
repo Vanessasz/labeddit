@@ -2,7 +2,7 @@ import React from "react";
 import { Divisao, Input, MeuBotao } from "./estilo";
 import { useHistory } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
-import { cadastro } from "../../services/user";
+import { cadastro } from "../../services/allRequisitions";
 
 export default function PaginaCadastro() {
   const history = useHistory();

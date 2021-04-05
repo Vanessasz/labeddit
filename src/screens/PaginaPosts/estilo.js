@@ -22,9 +22,11 @@ export const CardVotos = styled.div`
 `;
 
 export const CardComentarios = styled.p`
-  margin-left: 190px;
-  top: 30px;
-  position: relative;
+justify-content: space-space-between;
+margin-left: 190px;
+top: 30px;
+position: relative;
+ 
 `;
 
 export const MeuBotao = styled.button`

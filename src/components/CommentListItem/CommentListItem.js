@@ -7,15 +7,24 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction"
 import ListItem from "@material-ui/core/ListItem"
 
 export const CommentListItem = (props) => {
+
+const lidaAcimaVote = () => {
+  props.vote(props.comment.id, 1)
+}
+
+const lidaAbaixoVote = () => {
+  props.vote(props.comment.id, -1)
+}
+
   return (
     <ListItem>
       <ListItemText primary={props.comment.username} secondary={props.comment.text} />
       <ListItemSecondaryAction>
-        <IconButton edge="end" aria-label="delete">
+        <IconButton edge="end" onClick={lidaAcimaVote}>
           <img src={like} alt="icone like" />
         </IconButton>
         <span>{props.comment.votesCount}</span>
-        <IconButton edge="end" aria-label="delete">
+        <IconButton edge="end" onClick={lidaAbaixoVote }>
           <img src={deslike} alt="icone deslike" />
         </IconButton>
       </ListItemSecondaryAction>
