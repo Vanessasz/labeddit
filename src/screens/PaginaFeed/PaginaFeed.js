@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { ProtegePagina } from "../../hooks/ProtegePagina";
 import { BASE_URL } from "../../constants/apiConstants";
 import { DadosSolicitacao } from "../../hooks/DadosSolicitacao";
 import { useHistory } from "react-router-dom";
 import CardPosts from "../../components/CardPosts/CardPosts";
 import { CardPost, MeuBotao, Input, TextArea } from "./estilo";
-import { criandoPosts } from "../../services/user";
-import { useForm } from "../../hooks/useForm"
+import { criandoPosts } from "../../services/allRequisitions";
+import { useForm } from "../../hooks/useForm";
+import { LinearProgress } from "@material-ui/core";
 
 export default function PaginaFeed() {
   ProtegePagina();
   const history = useHistory();
-  const { form, onChange } = useForm({ text: "", title: "" });
+  const { form, onChange, limparInput } = useForm({ text: "", title: "" });
 
   const mudancaInput = (event) => {
     const { value, name } = event.target;
@@ -21,10 +22,11 @@ export default function PaginaFeed() {
   const formDeEnvio = (event) => {
     event.preventDefault();
     criandoPosts(form, history);
+    limparInput();
   };
 
   const data = DadosSolicitacao(`${BASE_URL}/posts`);
-  
+
   return (
     <div>
       <CardPost>
@@ -43,8 +45,8 @@ export default function PaginaFeed() {
         </form>
       </CardPost>
 
-      <div> 
-        {data && 
+      <div>
+        {data ? (
           data.posts.map((posts) => {
             return (
               <CardPosts
@@ -57,7 +59,10 @@ export default function PaginaFeed() {
                 votesCount={posts.votesCount}
               />
             );
-          })}
+          })
+        ) : (
+          <LinearProgress color={"secondary"}/>
+        )}
       </div>
     </div>
   );

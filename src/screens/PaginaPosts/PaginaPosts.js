@@ -1,28 +1,20 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ProtegePagina } from "../../hooks/ProtegePagina";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/apiConstants";
 import { DadosSolicitacao } from "../../hooks/DadosSolicitacao";
 import { Cards, CardComentarios, CardVotos } from "./estilo";
 import { TextField } from "@material-ui/core";
-import { CommentListItem } from "../../components/CommentListItem/CommentListItem";
 import { Button } from "@material-ui/core";
+import { CommentListItem } from "../../components/CommentListItem/CommentListItem";
 import { useForm } from '../../hooks/useForm'
-import { useHistory } from "react-router-dom";
-import { comentarios } from "../../services/user"
-import like from "../../assets/like.png";
-import deslike from "../../assets/deslike.png";
+import { comentarios, vote } from "../../services/allRequisitions"
 
 export default function PaginaPosts() {
   ProtegePagina();
   const params = useParams();
-  const history = useHistory();
   const data  = DadosSolicitacao(`${BASE_URL}/posts/${params.id}`, []);
-  const { form, onChange } = useForm({ text: "" });
-
-  // useEffect(() => {
-  // comentarios()
-  // }, []);
+  const { form, onChange, limparInput } = useForm({ text: "" });
 
 const mudancaInput = (event) => {
   const { value, name } = event.target;
@@ -32,6 +24,7 @@ const mudancaInput = (event) => {
 const formDeEnvio = (event) => {
   event.preventDefault();
   comentarios(form, params.id);
+  limparInput()
 };
 
   return (
@@ -41,6 +34,7 @@ const formDeEnvio = (event) => {
       <p>Post:&nbsp; {data.post && data.post.text}</p>
       <form onSubmit={formDeEnvio}>
       <TextField 
+      color={"secondary"}
       placeholder={"Seu comentário"}
       value={form.text}
       onChange={mudancaInput}
@@ -51,7 +45,7 @@ const formDeEnvio = (event) => {
       <CardComentarios>
       {data.post && data.post.comments.map((comment) => {
         return (
-        <CommentListItem comment={comment} />
+        <CommentListItem comment={comment} vote={vote}/>
       )})}
       </CardComentarios>
       <CardVotos>

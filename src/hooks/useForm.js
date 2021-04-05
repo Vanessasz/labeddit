@@ -7,11 +7,10 @@ export const useForm = (initialValues) => {
     setForm({ ...form, [name]: value });
   };
 
-  return { form, onChange };
+const limparInput = () => {
+    setForm(initialValues)
+}
+
+return {form, onChange, limparInput}
+
 };
-
-// const limparInput = () => {
-//     setForm(initialValues)
-// }
-
-// return {form, onChange, limparInput}
