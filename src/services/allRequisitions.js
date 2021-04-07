@@ -36,7 +36,7 @@ export const criandoPosts = (body, history) => {
       },
     })
     .then((res) => {
-      alert("Post enviado")
+      alert("Post enviado");
       irParaFeed(history);
     })
     .catch((error) => {
@@ -58,61 +58,18 @@ export const detalhesPosts = (id) => {
 };
 
 export const comentarios = (body, id) => {
-   
-  axios.post(`${BASE_URL}/posts/${id}/comment`, body, {
+  axios
+    .post(`${BASE_URL}/posts/${id}/comment`, body, {
       headers: {
-        Authorization: localStorage.getItem("token")
-      }})
+        Authorization: localStorage.getItem("token"),
+      },
+    })
 
-      .then(res => {  
-          alert("Comentário enviado!")
-
-      }).catch(error => {
-          console.log(error)
-          alert("Não foi possível comentar, tente novamente")
-      })
-}
-
-export const vote = (comment, direction, id) => {
-   
-  const body = {
-      "direction": direction
-  }
-      
-      axios.put(`${BASE_URL}/posts/${id}/comment/${comment}/vote`, body, {
-          headers: {
-            Authorization: localStorage.getItem("token")
-          }})
-  
-          .then(res => {     
-              
-  
-          }).catch(error => {
-            console.log(error)
-              alert("Não foi possível votar no comentário, tente novamente")
-          })
-  
-  return vote;
-}
-
-// export const voteComment = (bodyVote, id, commentId) => {
- 
-//     const body = {
-//         "direction": bodyVote
-//     }
-        
-//         axios.put(`${BASE_URL}/posts/${id}/comment/${commentId}/vote`, body, {
-//             headers: {
-//               Authorization: localStorage.getItem("token")
-//             }})
-    
-//             .then(res => {         
-                
-    
-//             }).catch(error => {
-//                 console.log(error.message)
-//             })
-    
-//     return voteComment;
-// }
-
+    .then((res) => {
+      alert("Comentário enviado!");
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("Não foi possível comentar, tente novamente");
+    });
+};

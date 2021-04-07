@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { ProtegePagina } from "../../hooks/ProtegePagina";
 import { BASE_URL } from "../../constants/apiConstants";
 import { DadosSolicitacao } from "../../hooks/DadosSolicitacao";
@@ -8,9 +9,11 @@ import { CardPost, MeuBotao, Input, TextArea } from "./estilo";
 import { criandoPosts } from "../../services/allRequisitions";
 import { useForm } from "../../hooks/useForm";
 import { LinearProgress } from "@material-ui/core";
+import { useParams } from "react-router-dom";
 
 export default function PaginaFeed() {
   ProtegePagina();
+  const params = useParams();
   const history = useHistory();
   const { form, onChange, limparInput } = useForm({ text: "", title: "" });
 
@@ -26,6 +29,29 @@ export default function PaginaFeed() {
   };
 
   const data = DadosSolicitacao(`${BASE_URL}/posts`);
+
+// // Voto dos posts
+// const votoPosts = async (direction) => {
+//   const body = {
+//     direction: direction,
+//   };
+
+//   await axios
+//     .put(`${BASE_URL}/posts/${params.id}/vote`, body, {
+//       headers: {
+//         Authorization: localStorage.getItem("token"),
+//       },
+//     })
+
+//     .then((res) => {})
+//     .catch((error) => {
+//       console.log(error)
+//       alert("Não foi possível votar no post, tente novamente");
+//     });
+
+//   return votoPosts;
+// };
+
 
   return (
     <div>
