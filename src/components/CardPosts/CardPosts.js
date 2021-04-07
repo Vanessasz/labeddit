@@ -16,13 +16,12 @@ export default function CardPosts(props) {
       <p>{props.username}</p>
       {props.text}
       <CardComentarios>
-        {props.commentsCount} comentários
-        &nbsp;&nbsp;
+        {props.commentsCount} comentários &nbsp;&nbsp;
       </CardComentarios>
       <CardVotos>
-        <img src={like} alt="icone like" />
+        <img src={like} alt="icone like"/>
         &nbsp;&nbsp;{props.votesCount}&nbsp;&nbsp;
-        <img src={deslike} alt="icone deslike" />
+        <img src={deslike} alt="icone deslike"/>
       </CardVotos>
     </Cards>
   );
