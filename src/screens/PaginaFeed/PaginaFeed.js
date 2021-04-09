@@ -30,28 +30,27 @@ export default function PaginaFeed() {
 
   const data = DadosSolicitacao(`${BASE_URL}/posts`);
 
-// // Voto dos posts
-// const votoPosts = async (direction) => {
-//   const body = {
-//     direction: direction,
-//   };
+  // Voto dos posts
+  const votoPosts = async (id, direction) => {
+    const body = {
+      direction: direction,
+    };
 
-//   await axios
-//     .put(`${BASE_URL}/posts/${params.id}/vote`, body, {
-//       headers: {
-//         Authorization: localStorage.getItem("token"),
-//       },
-//     })
+    await axios
+      .put(`${BASE_URL}/posts/${id}/vote`, body, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
 
-//     .then((res) => {})
-//     .catch((error) => {
-//       console.log(error)
-//       alert("Não foi possível votar no post, tente novamente");
-//     });
+      .then((res) => {})
+      .catch((error) => {
+        console.log(error);
+        alert("Não foi possível votar no post, tente novamente");
+      });
 
-//   return votoPosts;
-// };
-
+    return votoPosts;
+  };
 
   return (
     <div>
@@ -77,6 +76,7 @@ export default function PaginaFeed() {
             return (
               <CardPosts
                 key={posts.id}
+                votoPosts={votoPosts}
                 id={posts.id}
                 username={posts.username}
                 title={posts.title}
@@ -87,7 +87,9 @@ export default function PaginaFeed() {
             );
           })
         ) : (
-          <LinearProgress color={"secondary"}/>
+          <p>
+            <LinearProgress color={"secondary"} />
+          </p>
         )}
       </div>
     </div>
