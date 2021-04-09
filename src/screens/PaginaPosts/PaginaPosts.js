@@ -28,7 +28,7 @@ export default function PaginaPosts() {
     limparInput();
   };
 
-  // Voto dos comentários 
+  // Voto dos comentários
   const voto = async (commentId, direction) => {
     const body = {
       direction: direction,
@@ -65,12 +65,11 @@ export default function PaginaPosts() {
         <Button type={"submit"}>Enviar Comentário</Button>
       </form>
       <CardComentarios>
-        {data.post &&
+        {data.post && 
           data.post.comments.map((comment) => {
-            return <CommentListItem comment={comment} voto={voto} />;
+            return <CommentListItem comment={comment} voto={voto} />
           })}
       </CardComentarios>
-      <CardVotos></CardVotos>
-    </Cards>
+      </Cards>
   );
 }

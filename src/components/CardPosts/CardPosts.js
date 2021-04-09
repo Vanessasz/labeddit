@@ -1,12 +1,21 @@
 import React from "react";
 import { Cards, CardComentarios, CardVotos, MeuBotao } from "../estilo";
-import like from "../../assets/like.png";
-import deslike from "../../assets/deslike.png";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import IconButton from "@material-ui/core/IconButton";
 import { irParaPosts } from "../../router/Coordinator";
 import { useHistory } from "react-router-dom";
 
 export default function CardPosts(props) {
   const history = useHistory();
+
+  const cimaVoto = () => {
+    props.votoPosts(props.id, 1);
+  };
+
+  const baixoVoto = () => {
+    props.votoPosts(props.id, -1);
+  };
 
   return (
     <Cards>
@@ -16,12 +25,22 @@ export default function CardPosts(props) {
       <p>{props.username}</p>
       {props.text}
       <CardComentarios>
-        {props.commentsCount} comentários &nbsp;&nbsp;
+        {props.commentsCount} comentários &nbsp;
       </CardComentarios>
       <CardVotos>
-        <img src={like} alt="icone like"/>
-        &nbsp;&nbsp;{props.votesCount}&nbsp;&nbsp;
-        <img src={deslike} alt="icone deslike"/>
+        <IconButton edge="end" onClick={cimaVoto}>
+          <ArrowUpwardIcon
+            color={props.id.userVoteDirection === 1 ? "primary" : "disabled"}
+          />
+        </IconButton>
+        &nbsp;&nbsp;{props.votesCount}
+        <IconButton
+          color={props.id.userVoteDirection === -1 ? "secondary" : "disabled"}
+          edge="end"
+          onClick={baixoVoto}
+        >
+          <ArrowDownwardIcon />
+        </IconButton>
       </CardVotos>
     </Cards>
   );

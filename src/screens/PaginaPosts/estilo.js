@@ -2,31 +2,25 @@ import styled from "styled-components";
 
 export const Cards = styled.div`
   display: flex;
-  font-family: georgia;
   flex-direction: column;
   text-align: center;
-  margin: 10px auto;
   background: #dbb4ad;
   border: 2px solid #d30c78;
   border-radius: 10px;
-  width: 500px;
-  height: 500px;
-  padding: 5px;
-`;
+  width: auto;
+	height: 100%;
+	margin-top: 0;
 
-export const CardVotos = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-  bottom: 10px;
+
+
 `;
 
 export const CardComentarios = styled.p`
-justify-content: space-space-between;
-margin-left: 190px;
-top: 30px;
-position: relative;
- 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  
 `;
 
 export const MeuBotao = styled.button`

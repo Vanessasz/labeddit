@@ -16,10 +16,8 @@ export const Cards = styled.div`
 
 export const CardVotos = styled.div`
   display: flex;
-  align-items: flex-end;
-  top: 20px;
-  position: relative;
-  margin-right: 350px;
+  align-items: center;
+  margin-right: 300px;
 `;
 
 export const CardComentarios = styled.p`

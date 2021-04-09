@@ -49,5 +49,5 @@ export default function PaginaCadastro() {
         <MeuBotao>Cadastrar</MeuBotao>
       </form>
     </Divisao>
-  );
-}
+  )
+};
