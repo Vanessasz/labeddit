@@ -22,6 +22,7 @@ export const MeuBotao = styled.button`
   display: block;
   margin-left: 200px;
   margin-top: 10px;
+  text-align: center;
 `;
 
 export const Input = styled.input`
