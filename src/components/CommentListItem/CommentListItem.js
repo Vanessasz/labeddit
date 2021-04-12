@@ -22,6 +22,7 @@ export const CommentListItem = (props) => {
       props.voto(props.comment.id, -1);
     }
   };
+
   return (
     <ListItem>
       <ListItemText
@@ -29,13 +30,12 @@ export const CommentListItem = (props) => {
         secondary={props.comment.text}
       />
       <ListItemSecondaryAction>
-        <IconButton edge="end" onClick={lidaAcimaVoto}>
-          <ArrowUpwardIcon
+   <IconButton edge="end" onClick={lidaAcimaVoto}>
+   &nbsp;<ArrowUpwardIcon
             color={
               props.comment.userVoteDirection === 1 ? "primary" : "disabled"
             }
-          />
-          &nbsp;&nbsp;
+          />&nbsp;&nbsp;
         </IconButton>
         {props.comment.votesCount}
         <IconButton
@@ -49,5 +49,7 @@ export const CommentListItem = (props) => {
         </IconButton>
       </ListItemSecondaryAction>
     </ListItem>
-  );
-};
+   );
+        }
+
+      
