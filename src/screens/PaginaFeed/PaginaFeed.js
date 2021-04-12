@@ -5,15 +5,13 @@ import { BASE_URL } from "../../constants/apiConstants";
 import { DadosSolicitacao } from "../../hooks/DadosSolicitacao";
 import { useHistory } from "react-router-dom";
 import CardPosts from "../../components/CardPosts/CardPosts";
-import { CardPost, MeuBotao, Input, TextArea } from "./estilo";
+import { CardPost, Paragrafo, MeuBotao, Input, TextArea } from "./estilo";
 import { criandoPosts } from "../../services/allRequisitions";
 import { useForm } from "../../hooks/useForm";
-import { LinearProgress } from "@material-ui/core";
-import { useParams } from "react-router-dom";
+import { CircularProgress } from "@material-ui/core";
 
 export default function PaginaFeed() {
   ProtegePagina();
-  const params = useParams();
   const history = useHistory();
   const { form, onChange, limparInput } = useForm({ text: "", title: "" });
 
@@ -87,9 +85,9 @@ export default function PaginaFeed() {
             );
           })
         ) : (
-          <p>
-            <LinearProgress color={"secondary"} />
-          </p>
+          <Paragrafo>
+            <CircularProgress disableShrink color={"secondary"} />
+          </Paragrafo>
         )}
       </div>
     </div>

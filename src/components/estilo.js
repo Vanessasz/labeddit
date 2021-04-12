@@ -2,15 +2,18 @@ import styled from "styled-components";
 
 export const Cards = styled.div`
   display: flex;
-  font-family: georgia;
   flex-direction: column;
   text-align: center;
+  font-family: georgia;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 10px auto;
   background: #dbb4ad;
   border: 2px solid #d30c78;
   border-radius: 10px;
   width: 500px;
-  height: 450px;
+  height: auto;
   padding: 5px;
 `;
 

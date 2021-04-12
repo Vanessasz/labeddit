@@ -10,8 +10,12 @@ export const CardPost = styled.div`
   border: 2px solid #d30c78;
   border-radius: 10px;
   width: 500px;
-  height: 220px;
+  height: auto;
   padding: 5px;
+`;
+export const Paragrafo = styled.p`
+  text-align: center;
+  padding: 30px;
 `;
 
 export const MeuBotao = styled.button`
