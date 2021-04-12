@@ -34,5 +34,4 @@ experimente, tenho certeza que você vai gostar :)
 
 ## 🔖 Deploy usando o surge
 
-Você pode visualizar o projeto através [desse link](http://automatic-suit.surge.sh
-/). 
+Você pode visualizar o projeto através [desse link] (http://automatic-suit.surge.sh/). 
