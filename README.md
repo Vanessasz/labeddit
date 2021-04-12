@@ -30,7 +30,9 @@ Implementar uma rede social! A idéia é fazer uma rede real, com cadastro,
 login, posts, likes e comentários. 
 
 É super divertido, você é capaz de criar um post e ver as reações das pessoas, 
-experimente, tenho certeza que você vai gostar :)
+experimente, tenho certeza que você vai gostar :) 
+
+OBS: Use o navegador firefox para uma melhor experiência. 
 
 ## 🔖 Deploy usando o surge
 
