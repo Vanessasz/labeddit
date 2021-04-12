@@ -5,7 +5,7 @@
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="http:automatic-suit.surge.sh/">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="http:observant-tramp.surge.sh/">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 ## 🚀 Tecnologias
@@ -34,4 +34,4 @@ experimente, tenho certeza que você vai gostar :)
 
 ## 🔖 Deploy usando o surge
 
-Você pode visualizar o projeto através [desse link] (http://automatic-suit.surge.sh/). 
+Você pode visualizar o projeto através [desse link] (http://observant-tramp.surge.sh/). 
