@@ -35,8 +35,9 @@ export const CommentListItem = (props) => {
               props.comment.userVoteDirection === 1 ? "primary" : "disabled"
             }
           />
+          &nbsp;&nbsp;
         </IconButton>
-        <span>{props.comment.votesCount}</span>
+        {props.comment.votesCount}
         <IconButton
           color={
             props.comment.userVoteDirection === -1 ? "secondary" : "disabled"

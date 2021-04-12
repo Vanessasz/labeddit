@@ -4,23 +4,21 @@ export const Cards = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: 5px auto;
+  font-family: georgia;
   background: #dbb4ad;
   border: 2px solid #d30c78;
   border-radius: 10px;
-  width: auto;
-	height: 100%;
-	margin-top: 0;
-
-
-
+  width: 500px;
+  height: 100%;
+  padding: 20px;
 `;
 
 export const CardComentarios = styled.p`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  
-  
+  justify-content: space-around;
+  margin-left: 10px;
 `;
 
 export const MeuBotao = styled.button`
